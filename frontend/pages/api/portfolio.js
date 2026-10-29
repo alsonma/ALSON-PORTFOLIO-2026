@@ -1,7 +1,7 @@
 
 import axios from "axios";
 
-const API_URL = "https://alson-portfolio-2026.onrender.com";
+const API_URL = "https://alson-portfolio-2026.onrender.com/api";
 
 export const getPortfolioContent = async () => {
   const response = await axios.get(`${API_URL}/portfolio`);
