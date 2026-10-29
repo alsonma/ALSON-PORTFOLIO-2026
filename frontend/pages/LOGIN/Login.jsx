@@ -19,7 +19,7 @@ export default function Login() {
 
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/login",
+        "https://alson-portfolio-2026.onrender.com/api/auth/login",
         {
           email,
           password,
