@@ -1,0 +1,35 @@
+
+.paint-intro {
+  position: fixed;
+  inset: 0;
+  z-index: 999999;
+  overflow: hidden;
+  pointer-events: none;
+  background: transparent;
+}
+
+.paint-cover {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: #d6ff47;
+  clip-path: inset(0% 0% 0% 0%);
+  will-change: clip-path;
+}
+
+.paint-title {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  margin: 0;
+  padding: 20px;
+  color: #191919;
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(3rem, 10vw, 8rem);
+  font-weight: 700;
+  letter-spacing: -0.08em;
+  text-align: center;
+  visibility: hidden;
+}

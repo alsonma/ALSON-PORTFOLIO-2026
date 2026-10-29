@@ -1,0 +1,231 @@
+.login-page {
+  --ink: #191919;
+  --paper: #f4f0e8;
+  --lime: #d6ff47;
+  --pink: #ffb7d5;
+  --blue: #a9c6ff;
+  --orange: #f05a38;
+
+  min-height: 100vh;
+  padding: 40px 6%;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: "Space Grotesk", sans-serif;
+}
+
+.login-panel {
+  width: min(100%, 520px);
+  margin: 10px auto;
+  padding: 30px;
+  border: 1px solid var(--ink);
+  background: var(--blue);
+}
+
+.login-panel input {
+  width: 100%;
+  padding: 15px;
+  margin: 8px 0 18px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+}
+
+.login-submit {
+  width: 100%;
+  padding: 17px;
+  border: 1px solid var(--ink);
+  border-radius: 0;
+  background: var(--lime);
+  color: var(--ink);
+  font-family: "DM Mono", monospace;
+  cursor: pointer;
+  transition: transform 0.25s, box-shadow 0.25s;
+}
+
+.login-submit:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 4px 4px 0 var(--ink);
+}
+
+/* ===== LOGIN PAGE: FIT ONE SCREEN ===== */
+
+.login-page {
+  min-height: 100vh;
+  min-height: 100dvh;
+  height: 10vh;
+  height: 10dvh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.login-page *,
+.login-page *::before,
+.login-page *::after {
+  box-sizing: border-box;
+}
+
+/* Keep the form within the available height */
+.login-container,
+.login-content,
+.login-card {
+  max-height: 100%;
+}
+
+/* Compact layout on shorter screens */
+@media (max-height: 750px) {
+  .login-page {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .login-container,
+  .login-content {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+
+  .login-card {
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}
+
+/* ===== RESPONSIVE LOGIN PAGE ===== */
+
+.login-page {
+  width: 100%;
+  min-height: 100vh;
+  min-height: 100dvh;
+  padding: clamp(16px, 4vh, 36px) 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow-x: hidden;
+}
+
+.login-container,
+.login-content,
+.login-card {
+  width: 100%;
+  max-width: 440px;
+  min-width: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.login-card {
+  padding: clamp(20px, 4vw, 36px);
+}
+
+
+.login-page input,
+.login-page button,
+.login-page select,
+.login-page textarea {
+  max-width: 100%;
+  font: inherit;
+}
+
+.login-page input,
+.login-page select,
+.login-page textarea {
+  width: 100%;
+  min-width: 0;
+}
+.login-page .login-back{
+  margin-top: -5px;
+  width: 200px;
+}
+
+/* Fix login button visibility and spacing */
+
+.login-page {
+  height: auto;
+  min-height: 100vh;
+  min-height: 100dvh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  align-items: center;
+  padding-top: 24px;
+  padding-bottom: 32px;
+}
+
+.login-page button {
+  display: block;
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 8px;
+  width: 100%;
+  max-width: 100%;
+  flex-shrink: 0;
+  visibility: visible;
+  opacity: 1;
+}
+
+/* On smaller screens */
+@media (max-width: 768px) {
+  .login-page {
+    min-height: 100vh;
+    min-height: 100dvh;
+    height: auto;
+    padding: 24px 18px 36px;
+    overflow-y: auto;
+  }
+
+  .login-page button {
+    margin-top: 22px;
+    min-height: 46px;
+  }
+}
+
+/* On short screens */
+@media (max-height: 650px) {
+  .login-page {
+    align-items: flex-start;
+    padding-top: 16px;
+    padding-bottom: 24px;
+  }
+}
+
+
+/* Tablet and mobile */
+@media (max-width: 768px) {
+  .login-page {
+    padding: 24px 18px;
+  }
+
+  .login-container,
+  .login-content,
+  .login-card {
+    max-width: 420px;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-page {
+    padding: 16px;
+  }
+
+  .login-card {
+    padding: 22px 18px;
+  }
+}
+
+/* Short screens: compact spacing without clipping the form */
+@media (max-height: 650px) {
+  .login-page {
+    align-items: flex-start;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    overflow-y: auto;
+  }
+
+  .login-card {
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}

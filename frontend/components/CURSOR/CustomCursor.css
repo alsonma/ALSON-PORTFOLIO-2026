@@ -1,0 +1,162 @@
+
+/* Hide the normal mouse pointer over the portfolio */
+.portfolio,
+.portfolio * {
+  cursor: none !important;
+}
+
+/* Cartoon cursor body */
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 34px;
+  height: 34px;
+  border: 2px solid #171717;
+  border-radius: 46% 54% 50% 50%;
+  background: #f5c518;
+  box-shadow: 3px 4px 0 rgba(0, 0, 0, 0.2);
+  pointer-events: none;
+  z-index: 9999999;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, -50%) rotate(-8deg);
+  transition:
+    opacity 0.15s ease,
+    visibility 0.15s ease,
+    width 0.2s ease,
+    height 0.2s ease,
+    border-radius 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+/* Show cursor */
+.custom-cursor.cursor-visible {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* Cartoon eyes */
+.cursor-eye {
+  display: block;
+  width: 5px;
+  height: 8px;
+  background: #171717;
+  border-radius: 50%;
+  transform: translateY(-3px);
+}
+
+/* Playful smile */
+.cursor-smile {
+  position: absolute;
+  width: 10px;
+  height: 5px;
+  left: 50%;
+  top: 62%;
+  border-bottom: 2px solid #171717;
+  border-radius: 0 0 12px 12px;
+  transform: translateX(-50%);
+}
+
+/* Bigger, playful expression on interactive elements */
+.custom-cursor.cursor-hover {
+  width: 44px;
+  height: 44px;
+  border-radius: 40% 60% 45% 55%;
+  transform: translate(-50%, -50%) rotate(8deg) scale(1.08);
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.25);
+}
+
+.custom-cursor.cursor-hover .cursor-eye {
+  height: 10px;
+}
+
+.custom-cursor.cursor-hover .cursor-smile {
+  width: 14px;
+  height: 7px;
+}
+
+/* Hide custom cursor on touch devices */
+@media (pointer: coarse) {
+  .custom-cursor {
+    display: none;
+  }
+
+  .portfolio,
+  .portfolio * {
+    cursor: auto !important;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor {
+    transition: none;
+  }
+}
+
+/* Normal face */
+.cursor-eye {
+  display: block;
+  width: 5px;
+  height: 8px;
+  background: #171717;
+  border-radius: 50%;
+  transform: translateY(-3px);
+  transition: all 0.2s ease;
+}
+
+.cursor-smile {
+  position: absolute;
+  left: 50%;
+  top: 62%;
+  width: 10px;
+  height: 5px;
+  border-bottom: 2px solid #171717;
+  border-radius: 0 0 12px 12px;
+  transform: translateX(-50%);
+  transition: all 0.2s ease;
+}
+
+/* Excited face when hovering over interactive elements */
+.custom-cursor.cursor-hover {
+  width: 44px;
+  height: 44px;
+  border-radius: 40% 60% 45% 55%;
+  box-shadow: 4px 5px 0 rgba(0, 0, 0, 0.25);
+  animation: cursorBounce 0.45s ease-in-out;
+}
+
+.custom-cursor.cursor-hover .cursor-eye {
+  width: 6px;
+  height: 11px;
+  transform: translateY(-4px) scale(1.1);
+}
+
+.custom-cursor.cursor-hover .cursor-smile {
+  width: 15px;
+  height: 8px;
+  border-bottom-width: 3px;
+  top: 60%;
+}
+
+/* Playful bounce */
+@keyframes cursorBounce {
+  0% {
+    transform: translate(-50%, -50%) scale(0.8) rotate(-8deg);
+  }
+  60% {
+    transform: translate(-50%, -50%) scale(1.18) rotate(8deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .custom-cursor.cursor-hover {
+    animation: none;
+  }
+}
